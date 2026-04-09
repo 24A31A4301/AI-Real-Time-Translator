@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Real-Time Translator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: linear-gradient(to right, #74ebd5, #9face6);
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    textarea {
+      width: 60%;
+      height: 120px;
+      margin: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    #translatedText {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<h1>🌍 AI Real-Time Translator</h1>
+
+<textarea id="inputText" placeholder="Type text here..."></textarea>
+
+<div id="google_translate_element"></div>
+
+<div id="translatedText">Translation will appear here...</div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    { pageLanguage: 'en' },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+// AUTO DISPLAY TEXT
+document.getElementById("inputText").addEventListener("input", function() {
+  document.getElementById("translatedText").innerText = this.value;
+});
+</script>
+
+</body>
+</html>
